@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>My Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2 id="greeting"></h2>
+    <p>Welcome to my website. Enjoy your stay!</p>
+    <button onclick="changeBackground()">Change Background Color</button>
+</main>
+<footer>
+    <p>Lorem Ipsum...</p>
+</footer>
+<script>
+    function changeBackground() {
+        document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+
+    function setGreeting() {
+        let hour = new Date().getHours();
+        let greeting = hour < 12 ? "Good morning!" : hour < 18 ? "Good afternoon!" : "Good evening!";
+        document.getElementById("greeting").innerText = greeting;
+    }
+
+    setGreeting();
+</script>
+</body>
+</html>
